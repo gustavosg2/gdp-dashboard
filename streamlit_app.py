@@ -10,7 +10,7 @@ st.set_page_config(
 )
 
 q_parm = st.query_params()
-
+countries = q_parm.get("countries", "Nothing")
 # -----------------------------------------------------------------------------
 # Declare some useful functions.
 
@@ -81,7 +81,7 @@ min_value = gdp_df['Year'].min()
 max_value = gdp_df['Year'].max()
 
 from_year, to_year = st.slider(
-    f'Which years are you interested in? {q_parm.get('countries', "Nothing")}?',
+    f'Which years are you interested in? {countries} ?',
     min_value=min_value,
     max_value=max_value,
     value=[min_value, max_value])
