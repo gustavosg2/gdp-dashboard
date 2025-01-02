@@ -9,8 +9,7 @@ st.set_page_config(
     page_icon=':earth_americas:', # This is an emoji shortcode. Could be a URL too.
 )
 
-q_parm = st.query_params()
-countries = q_parm.get("countries", "Nothing")
+countries = st.query_params["countries"]
 # -----------------------------------------------------------------------------
 # Declare some useful functions.
 
